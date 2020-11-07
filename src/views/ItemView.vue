@@ -100,10 +100,11 @@
 </template>
 
 <script>
-import { buyItem, approveSpending } from "@/api";
+import { buyItem, approveSpending, allowance } from "@/api";
 import { toReadablePrice } from "@/util";
 import BuyNotifications from "../components/BuyNotifications";
 import { mapState } from "vuex";
+import BigNumber from "bignumber.js";
 
 export default {
   name: "item-view",
@@ -166,7 +167,10 @@ export default {
       try {
         this.isBuying = true;
         this.buyStep = 1;
-        await approveSpending(buyPrice, this.me);
+        const currentAllowance = await allowance(this.me);
+        if (new BigNumber(currentAllowance).lt(new BigNumber(buyPrice))) {
+          await approveSpending(buyPrice, this.me);
+        }
         this.buyStep = 2;
         await buyItem(this.itemId, this.me);
         this.buyStep = 3;

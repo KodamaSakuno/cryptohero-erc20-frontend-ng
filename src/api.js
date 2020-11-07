@@ -124,6 +124,9 @@ export const BatchGetCardsItem = async () => {
   return cards;
 };
 
+export const allowance = (from) =>
+  erc20Token.methods.allowance(from, network.contract).call();
+
 export const approveSpending = (price, from) =>
   erc20Token.methods.approve(network.contract, '0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF').send({
     from
