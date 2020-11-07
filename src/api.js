@@ -7,7 +7,7 @@ import cryptoWaterMarginABI from "./abi/cryptoWaterMargin.json";
 import ERC20ABI from "./abi/ERC20.json";
 import BatchGetCardsABI from "./abi/BatchGetCards.json";
 
-const network = config.network[4];
+const network = config.network[97];
 const cryptoWaterMarginContract = new web3.eth.Contract(
   cryptoWaterMarginABI,
   network.contract
@@ -16,7 +16,7 @@ const erc20Token = new web3.eth.Contract(ERC20ABI, network.token);
 
 const BatchGetCards = new web3.eth.Contract(
   BatchGetCardsABI,
-  "0x6fa9CF4755C180bDddd74847BA1c95587701516A"
+  "0xf3bDFf2fa1E1c495d11ce57a3dE8f5E4b5961C25"
 );
 
 let store = [];
@@ -108,7 +108,7 @@ export const getItem = async id => {
 
 export const BatchGetCardsItem = async () => {
   const rawResultArray = await BatchGetCards.methods
-    .getCard(network.contract, 114)
+    .getCard(network.contract, 1)
     .call();
   const cards = rawResultArray.map(({ id, nextPrice, owner, price }) => {
     const card = config.cards[id] || {};

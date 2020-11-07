@@ -1,10 +1,10 @@
 import cardsData from "./cards.json";
 
 export const network = {
-  4: {
-    name: "Rinkeby Test Network",
-    contract: process.env.VUE_APP_WaterMarginContract,
-    token: process.env.VUE_APP_PayWithTokenContract // TOOTH on testnet
+  97: {
+    name: "BSC Testnet",
+    contract: "0x47E5e5cC074E581394e953B349E85b358Bd3C7D6",
+    token: "0x36eb1b02cb7be3ffa1ee7bd2a3c7d036002730f7"
   }
 };
 
