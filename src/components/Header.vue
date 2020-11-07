@@ -79,7 +79,7 @@ export default {
     // this.$store.dispatch("FETCH_ME");
     const network = await getNetwork();
     if (!network) {
-      alert("Please switch to Rinkeby testnet and refresh the page!");
+      alert("Please switch to BSC testnet and refresh the page!");
       return;
     }
     this.network = network;
