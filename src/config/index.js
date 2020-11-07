@@ -1,6 +1,11 @@
 import cardsData from "./cards.json";
 
 export const network = {
+  56: {
+    name: "BSC Mainnet",
+    contract: "0x304681A36e7413d4d818ec47E1FD0fAf066f8e21",
+    token: "0x10747e2045a0ef884a0586ac81558f43285ea3c7"
+  },
   97: {
     name: "BSC Testnet",
     contract: "0x47E5e5cC074E581394e953B349E85b358Bd3C7D6",
