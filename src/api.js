@@ -16,7 +16,7 @@ const erc20Token = new web3.eth.Contract(ERC20ABI, network.token);
 
 const BatchGetCards = new web3.eth.Contract(
   BatchGetCardsABI,
-  "0xf3bDFf2fa1E1c495d11ce57a3dE8f5E4b5961C25"
+  "0x8F85f4aE095f76a0E62f87f4eAD2C7ea566Ff38c"
 );
 
 let store = [];
