@@ -7,7 +7,7 @@ import cryptoWaterMarginABI from "./abi/cryptoWaterMargin.json";
 import ERC20ABI from "./abi/ERC20.json";
 import BatchGetCardsABI from "./abi/BatchGetCards.json";
 
-const network = config.network[97];
+const network = config.network[56];
 const cryptoWaterMarginContract = new web3.eth.Contract(
   cryptoWaterMarginABI,
   network.contract
